@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CogitoLex</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+
+    <div class="bg-gradient"></div>
+
+    <!-- APP -->
+
+    <div class="app">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <div class="brand-row">
+
+                    <div class="logo">
+                        C
+                    </div>
+
+                    <div>
+
+                        <h1>
+                            CogitoLex
+                        </h1>
+
+                        <p>
+                            Company & Pincode Intelligence
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="user-pill">
+
+                BY NIHIL
+
+            </div>
+
+        </header>
+
+        <!-- HERO -->
+
+        <section class="hero-card">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+
+                    BANK ELIGIBILITY SEARCH
+
+                </div>
+
+                <h2>
+
+                    Search Companies & Pincodes
+
+                </h2>
+
+                <p>
+
+                    Instantly check company and
+                    pincode eligibility across
+                    multiple banks.
+
+                </p>
+
+                <!-- TABS -->
+
+                <div class="tabs">
+
+                    <button id="companyTab" class="tab active">
+
+                        Company Search
+
+                    </button>
+
+                    <button id="pincodeTab" class="tab">
+
+                        Pincode Search
+
+                    </button>
+
+                </div>
+
+                <!-- SEARCH -->
+
+                <div class="search-row">
+
+                    <input id="searchInput" type="text" placeholder="Search company name..." />
+
+                    <button id="searchBtn">
+
+                        Search
+
+                    </button>
+
+                </div>
+
+                <!-- RECENT SEARCHES -->
+
+                <div id="recentSearches" class="recent-searches">
+
+                </div>
+
+                <div class="search-hints">
+
+                    <span class="hint-chip">
+                        Example: TCS
+                    </span>
+
+                    <span class="hint-chip">
+                        Example: Infosys
+                    </span>
+
+                    <span class="hint-chip">
+                        Example: 560056
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SEARCH STATUS -->
+
+        <section class="stats-bar">
+
+            <div class="result-count" id="resultCount">
+
+                0 Results
+
+            </div>
+
+            <div id="searchStatus" class="search-status">
+
+            </div>
+
+        </section>
+
+        <!-- EMPTY STATE -->
+
+        <section id="emptyState" class="empty-state">
+
+            <div class="empty-icon">
+
+                🔎
+
+            </div>
+
+            <h3>
+                Start Searching
+            </h3>
+
+            <p>
+                Search companies to view bank eligibility
+                or search pincodes to view supported banks.
+            </p>
+
+        </section>
+
+        <!-- NO RESULTS STATE -->
+
+        <section id="noResults" class="empty-state" style="display:none;">
+
+            <div class="empty-icon">
+
+                📭
+
+            </div>
+
+            <h3>
+
+                No Results Found
+
+            </h3>
+
+            <p>
+
+                Try a different company
+                name or pincode.
+
+            </p>
+
+        </section>
+
+        <!-- RESULTS -->
+
+        <section id="results" class="results-grid">
+
+        </section>
+
+    </div>
+
+    <!-- OVERLAY -->
+
+    <div id="drawerOverlay" class="drawer-overlay">
+
+    </div>
+
+    <!-- DRAWER -->
+
+    <aside id="detailDrawer" class="detail-drawer">
+
+        <div class="drawer-header">
+
+            <div>
+
+                <h2 id="drawerTitle">
+
+                    Details
+
+                </h2>
+
+                <div id="drawerSubtitle" class="drawer-subtitle">
+
+                </div>
+
+            </div>
+
+            <button id="closeDrawer">
+
+                ✕
+
+            </button>
+
+        </div>
+
+        <div id="drawerContent" class="drawer-content">
+
+        </div>
+
+    </aside>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+</body>
+
+</html>
