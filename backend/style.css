@@ -1187,3 +1187,81 @@ body {
         font-size: 12px;
     }
 }
+
+/* ===========================
+   MOBILE SEARCH OVERLAY MODE
+=========================== */
+
+@media (max-width:768px) {
+
+    body.search-mode .topbar {
+        display: none;
+    }
+
+    body.search-mode .hero-badge {
+        display: none;
+    }
+
+    body.search-mode .hero-content h2 {
+        display: none;
+    }
+
+    body.search-mode .hero-content p {
+        display: none;
+    }
+
+    body.search-mode .search-hints {
+        display: none;
+    }
+
+    body.search-mode .recent-searches {
+        display: none;
+    }
+
+    body.search-mode .stats-bar {
+        display: none;
+    }
+
+    body.search-mode .empty-state {
+        display: none;
+    }
+
+    body.search-mode .hero-card {
+
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+
+        z-index: 999;
+
+        border-radius: 0;
+
+        padding: 14px;
+
+        margin: 0;
+
+        background: #020617;
+    }
+
+    body.search-mode .app {
+        padding: 0;
+    }
+
+    body.search-mode #masterActions {
+
+        padding: 12px 14px;
+
+        margin-top: 82px;
+    }
+
+    body.search-mode .results-grid {
+
+        margin-top: 0;
+
+        padding: 0 14px 20px;
+    }
+
+}
