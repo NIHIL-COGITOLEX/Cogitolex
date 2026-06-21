@@ -804,3 +804,51 @@ document.addEventListener("keydown", (e) => {
     DOM.searchInput.focus();
 
 })();
+
+// =====================================
+// PWA INSTALL
+// =====================================
+
+let deferredPrompt;
+
+const installBtn =
+    document.getElementById("installBtn");
+
+window.addEventListener(
+    "beforeinstallprompt",
+    (e) => {
+
+        e.preventDefault();
+
+        deferredPrompt = e;
+
+        if (installBtn) {
+            installBtn.style.display = "block";
+        }
+    }
+);
+
+installBtn?.addEventListener(
+    "click",
+    async () => {
+
+        if (!deferredPrompt) return;
+
+        deferredPrompt.prompt();
+
+        await deferredPrompt.userChoice;
+
+        deferredPrompt = null;
+
+        installBtn.style.display = "none";
+    }
+);
+
+window.addEventListener(
+    "appinstalled",
+    () => {
+
+        DOM.searchStatus.textContent =
+            "CogitoLex Installed";
+    }
+);

@@ -1,6 +1,6 @@
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-
+import os
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
@@ -8,6 +8,8 @@ from sqlalchemy import text
 from database import engine
 
 app = FastAPI()
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # ======================================
 # CORS
@@ -188,3 +190,15 @@ app.mount(
     StaticFiles(directory=".", html=True),
     name="static"
 )
+
+@app.get("/manifest.json")
+def manifest():
+    return FileResponse(
+        os.path.join(BASE_DIR, "manifest.json")
+    )
+
+@app.get("/service-worker.js")
+def service_worker():
+    return FileResponse(
+        os.path.join(BASE_DIR, "service-worker.js")
+    )
