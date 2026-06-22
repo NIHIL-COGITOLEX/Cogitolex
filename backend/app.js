@@ -409,25 +409,6 @@ function exportAllCardsText() {
 
 function createCompanyCard(company) {
 
-    if (
-        window.innerWidth <= 768 &&
-        document.body.classList.contains(
-            "search-mode"
-        )
-    ) {
-
-        return `
-        <div class="glass-card company-card"
-            data-index="${company.index}">
-
-            <div class="card-title">
-                ${company.company_name}
-            </div>
-
-        </div>
-        `;
-    }
-
     const preview = company.listings
         .slice(0, 3)
         .map(item => `
@@ -463,25 +444,6 @@ function createCompanyCard(company) {
 }
 
 function createPincodeCard(item) {
-
-    if (
-        window.innerWidth <= 768 &&
-        document.body.classList.contains(
-            "search-mode"
-        )
-    ) {
-
-        return `
-        <div class="glass-card pincode-card"
-            data-index="${item.index}">
-
-            <div class="card-title">
-                ${item.pincode}
-            </div>
-
-        </div>
-        `;
-    }
 
     return `
         <div class="glass-card pincode-card" data-index="${item.index}">
@@ -890,29 +852,3 @@ window.addEventListener(
             "CogitoLex Installed";
     }
 );
-
-// MOBILE SEARCH MODE
-
-DOM.searchInput.addEventListener("focus", () => {
-
-    if (window.innerWidth <= 768) {
-
-        document.body.classList.add(
-            "search-mode"
-        );
-    }
-
-});
-
-DOM.searchInput.addEventListener("input", (e) => {
-
-    if (
-        window.innerWidth <= 768 &&
-        e.target.value.trim() === ""
-    ) {
-        document.body.classList.remove(
-            "search-mode"
-        );
-    }
-
-});
